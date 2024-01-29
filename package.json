@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/Diego-qa-ebac/teste-ebac-ui#readme",
   "devDependencies": {
-    "cypress": "^13.6.0"
+    "cypress": "^13.6.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "cypress-fixture-faker": "^1.0.2",
+    "faker": "^5.5.3"
   }
 }
