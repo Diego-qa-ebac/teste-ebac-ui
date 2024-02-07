@@ -4,18 +4,19 @@
 
     describe('Funcionalidade Pré Cadastro', () => {
        
-
-    beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
-    });
-    
-    it('Deve completar o pré cadastro com sucesso', () => {
         var nomeFaker = faker.name.firstName()
         var sobrenomeFaker = faker.name.lastName()
         var emailFaker = faker.internet.email()
+        var senhaFaker = faker.internet.password()
 
+    beforeEach(() => {
+        cy.visit('minha-conta')
+    });
+    
+    it('Deve completar o pré cadastro com sucesso', () => {
+    
         cy.get('#reg_email').type(emailFaker)
-        cy.get('#reg_password').type('teste@teste.com')
+        cy.get('#reg_password').type(senhaFaker)
         cy.get(':nth-child(4) > .button').click()
 
         cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
@@ -25,6 +26,12 @@
 
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
 
+    })
+
+    it.only('Deve completar o cadastro com sucesso - usando comandos customizados', () => {
+        cy.preCadastro(emailFaker, emailFaker, nomeFaker, sobrenomeFaker)
+
+        cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
     });
 
 });
