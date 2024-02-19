@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run --browser chrome",
+    "cy:dash": "npx cypress run --record --key e22f54e3-f44c-4284-99ed-671ad9d3ba59"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/Diego-qa-ebac/teste-ebac-ui#readme",
   "devDependencies": {
-    "cypress": "^13.6.3"
+    "cypress": "^13.6.4"
   },
   "dependencies": {
     "@faker-js/faker": "^8.3.1",

@@ -13,9 +13,10 @@
         cy.visit('minha-conta')
     });
     
-    it('Deve completar o pré cadastro com sucesso', () => {
+    it.only('Deve completar o pré cadastro com sucesso', () => {
     
         cy.get('#reg_email').type(emailFaker)
+        cy.log(emailFaker) //console log
         cy.get('#reg_password').type(senhaFaker)
         cy.get(':nth-child(4) > .button').click()
 
@@ -28,8 +29,8 @@
 
     })
 
-    it.only('Deve completar o cadastro com sucesso - usando comandos customizados', () => {
-        cy.preCadastro(emailFaker, emailFaker, nomeFaker, sobrenomeFaker)
+    it('Deve completar o cadastro com sucesso - usando comandos customizados', () => {
+        cy.preCadastro(emailFaker, senhaFaker, nomeFaker, sobrenomeFaker)
 
         cy.get('.woocommerce-message').should('contain', 'Detalhes da conta modificados com sucesso.')
     });

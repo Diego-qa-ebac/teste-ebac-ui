@@ -1,0 +1,22 @@
+[ 
+    {
+         "nomeProduto": "Aether Gym Pant",
+         "tamanho": "32",
+         "cor": "Green",
+         "quantidade": 3
+    },
+    {
+        "nomeProduto": "Apollo Running Short",
+        "tamanho": "34",
+        "cor": "Black",
+        "quantidade": 7
+   },
+   {
+
+        "nomeProduto": "Augusta Pullover Jacket",
+        "tamanho": "XS",
+        "cor": "Orange",
+        "quantidade": 10
+    }
+]
+
